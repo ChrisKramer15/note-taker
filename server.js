@@ -10,10 +10,15 @@ var PORT = 9001;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//route that sends user notes html page
+//route that sends user notes.html page
 app.get("/notes", function(req, res) {
     res.sendFile(path.join(__dirname, "notes.html"));
   });
+
+//route that sends user index.html page
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
 
   //listen to port for server activation
   app.listen(PORT, function() {
